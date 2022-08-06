@@ -14,3 +14,70 @@ When everything finshes, you can query the complete Service at http://localhost:
 If you wish to query the individual graph for the two services (user-service, tweet-service), check your console logs to find the server urls there.
 
 Enjoy! 
+
+# IMPORTANT : 
+    Your local mongoDB should be up and running, or else, starting the server will throw errors.
+
+# Query and Mutation Examples: 
+
+mutation{
+  createUser(userPayload: {
+    username: "Tony Stark"
+  }) {
+    id
+    username
+  }
+}
+
+mutation{
+  createUser(userPayload: {
+    username: "Steve Rogers"
+  }) {
+    id
+    username
+  }
+}
+
+mutation{
+  createTweet(tweetPayload: {
+    text: "I am a billionaire, philanthropist and a playboy.",
+    userId: "62eee28085d049438747a4c4"
+  }) {
+    id
+    text
+    creator {
+      username
+    }
+  }
+}
+
+mutation{
+  createTweet(tweetPayload: {
+    text: "I am Captain-America",
+    userId: "62eee24885d049438747a4c2"
+  }) {
+    id
+    text
+    creator {
+      username
+    }
+  }
+}
+
+query{
+  tweets {
+    text
+    creator {
+      username
+    }
+  }
+}
+
+query{
+  users {
+    username
+    tweets {
+      text
+    }
+  }
+}

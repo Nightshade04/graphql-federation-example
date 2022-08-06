@@ -41,7 +41,7 @@ mutation{
 mutation{
   createTweet(tweetPayload: {
     text: "I am a billionaire, philanthropist and a playboy.",
-    userId: "<User ID for a particular user from mongo goes here>"
+    userId: "--User ID for a particular user from mongo goes here--"
   }) {
     id
     text
@@ -54,7 +54,7 @@ mutation{
 mutation{
   createTweet(tweetPayload: {
     text: "I am Captain-America",
-    userId: "<User ID for a particular user from mongo goes here>"
+    userId: "--User ID for a particular user from mongo goes here--"
   }) {
     id
     text
